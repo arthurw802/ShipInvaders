@@ -15,35 +15,49 @@ public class PowerupSpawner : MonoBehaviour
     public Powerup[] powerupPrefabs;                    // The list of objects that could be spawned (choose one randomly)
     public float spawnIntervalLow = 5f;                 // How often to spawn a new object. Should be scaled by some difficulty factor
     public float spawnIntervalHigh = 15f;               // Upperbound on spawn rate
+    public int maxPowerups = 3;
+    private int currentPowerups = 0;
     private float spawnTimer = 0f;                      // Amount of time since last spawn
     private float spawnInterval = 0f;
 
     private void CreatePowerup()
     {
-        print("Spawning a powerup!");
-        int index = Random.Range(0, powerupPrefabs.Length);
-        GameObject currentPowerupToCreate = powerupPrefabs[index].gameObject;
+        //Only allow a set number of powerups
+        if (currentPowerups <= maxPowerups)
+        {
+            currentPowerups++;
+            int index = Random.Range(0, powerupPrefabs.Length);
+            GameObject currentPowerupToCreate = powerupPrefabs[index].gameObject;
 
-        //determine intelligent position
-        float xSpawn = Random.Range(-15, 15);
-        float ySpawn = 0; //On the ground
-        float zSpawn = Random.Range(-15, 15);
+            //determine intelligent position
+            float xSpawn = Random.Range(-8, 8);
+            float ySpawn = 0; //On the ground
+            float zSpawn = Random.Range(-8, 8);
 
-        GameObject newObject = GameObject.Instantiate(currentPowerupToCreate);
-        //Assign its position
-        newObject.transform.position = new Vector3(xSpawn, ySpawn, zSpawn);
+            GameObject newObject = GameObject.Instantiate(currentPowerupToCreate);
+            //Assign its position
+            newObject.transform.position = new Vector3(xSpawn, ySpawn, zSpawn);
 
-        //Make them all children of the spawner
-        newObject.transform.SetParent(this.transform);
+            //Make them all children of the spawner
+            newObject.transform.SetParent(this.transform);
 
-        //Adjust scale to make them all different. from 80% - 120%
-        float randomScale = newObject.transform.localScale.x * Random.Range(.8f, 1.2f);
-        newObject.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+            //Adjust scale to make them all different. from 80% - 120%
+            float randomScale = newObject.transform.localScale.x * Random.Range(.8f, 1.2f);
+            newObject.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        }
     }
 
     void Start()
     {
         spawnInterval = Random.Range(spawnIntervalLow, spawnIntervalHigh);
+    }
+
+    /// <summary>
+    /// Helper function called when a powerup is removed from the screen
+    /// </summary>
+    public void RemovePowerup()
+    {
+        currentPowerups--;
     }
 
     void Update()

@@ -14,6 +14,7 @@ public class PlayerScoreController : MonoBehaviour {
 
     public Text scoreValueText;
     public Text healthValueText;
+    public Text highScoreText;
     public int totalHealth = 100;                                       // Default to 100 but allow editor override
     public GameObject flashPanel;
     public AudioClip healthSound;
@@ -58,6 +59,8 @@ public class PlayerScoreController : MonoBehaviour {
         if (totalHealth <= 0)
         {
             print("Ending game!");
+            //Persist the score
+            HighScoreController.SetHighScore(this.totalScore);
             SceneManager.LoadScene("GameOver");
         }
 
@@ -102,6 +105,8 @@ public class PlayerScoreController : MonoBehaviour {
 	void Start () {
         //Reset the difficulty on load
         DifficultyController.ResetVariables();
+
+        highScoreText.text = HighScoreController.GetHighScores();
 
         flashPanel.SetActive(false);
         AdjustScore(0); //Initialize the score text to current;

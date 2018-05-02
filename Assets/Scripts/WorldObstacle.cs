@@ -33,16 +33,24 @@ public class WorldObstacle : MonoBehaviour {
     {
         if(other.gameObject.tag == "FiredObject")
         {
-            health -= 1;
+            FiredObject fo = other.gameObject.GetComponent<FiredObject>();
+            health -= fo.damage;
             hpText.text = "HP: " + health;
-            if (health == 0)
+
+            //Determine if the other object has an explosiveController or not
+            FiredObjectExplosionController foec = other.gameObject.GetComponent<FiredObjectExplosionController>();
+            if(foec != null)
+            {
+                foec.Explode();
+            }
+            if (health <= 0)
             {
                 //Play sound
                 AudioSource.PlayClipAtPoint(hitDeadSound, transform.position);
+
                 //Award pointValue points to the player
                 playerScoreController.AdjustScore(pointValue);
-                //Remove the object that hit the obstactle
-                Destroy(other.gameObject);
+
                 //Remove this obstacle
                 Destroy(this.gameObject);
             }  else
@@ -50,8 +58,6 @@ public class WorldObstacle : MonoBehaviour {
                 //Else the object should persist, but have a lower health! Play non-death sound
                 AudioSource.PlayClipAtPoint(hitStillHealthSound, transform.position);
             }
-            
-           
         }
        
     }

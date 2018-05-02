@@ -21,7 +21,7 @@ public class DifficultyController : MonoBehaviour {
 
     public static void IncrementDifficulty()
     {
-        obstacleSpeedFactor += .01f;
+        obstacleSpeedFactor += .04f;
         obstacleSpawnRateFactor -= .05f;
     }
 }

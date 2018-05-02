@@ -216,7 +216,7 @@ MonoBehaviour:
   hitStillHealthSound: {fileID: 8300000, guid: e64b3a77691f1d1439b17d293b46bd11, type: 3}
   hitDeadSound: {fileID: 8300000, guid: 6f9eac5eebca4f24b95f57a70d25bd9c, type: 3}
   protectionZoneOfInterest: {fileID: 0}
-  attackdamage: 5
+  attackdamage: 10
   speed: 0.1
 --- !u!114 &114831840830043972
 MonoBehaviour:

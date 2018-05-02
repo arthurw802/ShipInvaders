@@ -16,6 +16,7 @@ public class Powerup : MonoBehaviour {
     public float powerupDuration = 6f;                          // The amount of time the powerup should be active for
     public float timePowerupProjectileAlive = 5f;               // The amount of time these projectiles should 'live' in the world prior to being destroyed
     public AudioClip powerupFireSound;                          // If not null, the sound the cannnon should change to when firing this powerup projectile
+    public float powerupRefireSpeed = .5f;                      // How fast this powerup can be refired
 
     private CannonFireController cannonFireController;
 
@@ -28,8 +29,16 @@ public class Powerup : MonoBehaviour {
             // Pass powerup data to the CammonFireController
             cannonFireController.ReceivePowerup(this);
 
+            //Remove one count of powerup from the powerup spawner
+            GameObject.FindObjectOfType<PowerupSpawner>().RemovePowerup();
+
+            //Remove the firedobject from the world
+            Destroy(other.gameObject);
+
             //Remove the powerup from the world
             Destroy(this.gameObject);
+
+
         }
 
     }

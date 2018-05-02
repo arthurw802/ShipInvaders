@@ -9,46 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1433052825561782}
+  m_RootGameObject: {fileID: 1394391402174476}
   m_IsPrefabParent: 1
---- !u!1 &1433052825561782
+--- !u!1 &1394391402174476
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4344890062714752}
-  - component: {fileID: 33773038314081806}
-  - component: {fileID: 23028464751496732}
-  - component: {fileID: 64710461766411726}
-  - component: {fileID: 114648729297792664}
+  - component: {fileID: 4691556795902836}
+  - component: {fileID: 33688019388473196}
+  - component: {fileID: 23343943487044608}
+  - component: {fileID: 135325344356893768}
+  - component: {fileID: 135728798975511858}
+  - component: {fileID: 114978070356197974}
   m_Layer: 0
-  m_Name: LargerBallsPowerup
+  m_Name: CannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4344890062714752
+--- !u!4 &4691556795902836
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433052825561782}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.9143105, y: 0, z: -1.7083074}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_GameObject: {fileID: 1394391402174476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.063, y: 0.658, z: 1.341}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23028464751496732
+--- !u!23 &23343943487044608
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433052825561782}
+  m_GameObject: {fileID: 1394391402174476}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,10 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: c291d778c29828c4c955040177b7a476, type: 2}
-  - {fileID: 2100000, guid: 92e0721f6e5c451418523971108e86c2, type: 2}
-  - {fileID: 2100000, guid: af289d5449ff41b4d8920fad86f249f3, type: 2}
-  - {fileID: 2100000, guid: 3b1902aec28a61b469d26f574d508c1b, type: 2}
+  - {fileID: 2100000, guid: 17f1db11a8f3a904f951f79f2c0ecbad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,43 +79,46 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33773038314081806
+--- !u!33 &33688019388473196
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433052825561782}
-  m_Mesh: {fileID: 4300002, guid: cbac18cf13e9115468c28bba1a938ec8, type: 3}
---- !u!64 &64710461766411726
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433052825561782}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: cbac18cf13e9115468c28bba1a938ec8, type: 3}
---- !u!114 &114648729297792664
+  m_GameObject: {fileID: 1394391402174476}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114978070356197974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1433052825561782}
+  m_GameObject: {fileID: 1394391402174476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3fe93a3d1e004d499e4cf2c3f22fca8, type: 3}
+  m_Script: {fileID: 11500000, guid: 85c2561cb61e9d94cb091141b4c15cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupSound: {fileID: 8300000, guid: 58ad7582025655f4684a007749ff5679, type: 3}
-  powerupProjectilePrefab: {fileID: 1361022400563312, guid: ee58cb09cac5c2443a21c0bbd72a56de,
-    type: 2}
-  firePower: 6000
-  powerupDuration: 6
-  timePowerupProjectileAlive: 3
-  powerupFireSound: {fileID: 8300000, guid: 53402f9e283d70b4dbb70e367a760dbc, type: 3}
-  powerupRefireSpeed: 0.4
+  damage: 1
+--- !u!135 &135325344356893768
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394391402174476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135728798975511858
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394391402174476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

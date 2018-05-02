@@ -10,6 +10,8 @@ using UnityEngine;
 /// </summary>
 public class FiredObject : MonoBehaviour {
 
+    public int damage = 1;              // The amount of damage this fired object will do
+
     void DestroyFireObject()
     {
         Destroy(this.gameObject);
