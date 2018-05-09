@@ -23,6 +23,7 @@ public class CannonController : MonoBehaviour {
 	}
 	
 	void Update () {
+        print("ARTHUR");
 
         if (Input.GetKey(KeyCode.LeftShift))
         {

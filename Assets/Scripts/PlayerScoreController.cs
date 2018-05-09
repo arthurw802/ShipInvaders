@@ -20,18 +20,20 @@ public class PlayerScoreController : MonoBehaviour {
     public AudioClip healthSound;
     public float difficultyIncrementInterval = 5f;                      // How often to increment the difficulty of the level
     public float difficultyIncrementScoreInterval = 20f;                // At what factor of scores should the difficulty pick up too
+    private float lastScoreGrant = 0f;                                  // The last score at which additional score was granted
 
-    private int totalScore = 15;
+    private int totalScore = 0;
 
     public void AdjustScore(int amount)
     {
         this.totalScore += amount;
         scoreValueText.text = "" + GetTotalScore();
 
-        if (GetTotalScore() % 100 == 0 && GetTotalScore() != 0)
+        if (GetTotalScore() - lastScoreGrant >= 50 && GetTotalScore() != 0)
         {
-            //Grant extra health when you get 100 score!
-            TakeDamage(-20, Color.green);
+            //Grant extra health every time you get 50 score!
+            TakeDamage(-10, Color.green);
+            lastScoreGrant = GetTotalScore();
         }
 
         if (GetTotalScore() % difficultyIncrementScoreInterval == 0 && GetTotalScore() != 0)
@@ -92,7 +94,6 @@ public class PlayerScoreController : MonoBehaviour {
     /// </summary>
     private void IncrementDifficulty()
     {
-        print("Incrementing difficulty");
         DifficultyController.IncrementDifficulty();
     }
 

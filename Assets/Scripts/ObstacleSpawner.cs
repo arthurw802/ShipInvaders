@@ -30,6 +30,7 @@ public class ObstacleSpawner : MonoBehaviour {
         GameObject newObject = GameObject.Instantiate(currentObstactleToCreate);
         //Assign its position
         newObject.transform.position = new Vector3(xSpawn, ySpawn, zSpawn);
+        newObject.transform.SetParent(this.transform);
 
         //Handle rotation to have it look at its target. Rotation will be handled in the WorldObstacle class to ensure it happens at each frame
 
@@ -47,7 +48,7 @@ public class ObstacleSpawner : MonoBehaviour {
     {
         spawnTimer += Time.deltaTime;
         
-        if(spawnTimer >= spawnInterval * DifficultyController.obstacleSpawnRateFactor) //Consider the spawnRateFactor for difficulty increasing
+        if(spawnTimer >= Mathf.Max(spawnInterval * DifficultyController.obstacleSpawnRateFactor, .5f)) //Consider the spawnRateFactor for difficulty increasing. Min spawn rate is .5
         {
             //spawn new object
             spawnTimer = 0f;

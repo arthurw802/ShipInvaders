@@ -144,7 +144,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 198274911623154122, guid: 3004732adace2ec49b0aa849ae14e0f2,
     type: 2}
   explosionSound: {fileID: 8300000, guid: 23fcb460f06f4c24981630bbfd223919, type: 3}
-  explosionColliderMultiplier: 10
+  explosionColliderMultiplier: 5
 --- !u!135 &135056616959541206
 SphereCollider:
   m_ObjectHideFlags: 1

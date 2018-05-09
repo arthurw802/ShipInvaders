@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Handles the mouse look functionality to attach the camera to the mouse.
 /// 
-/// Adapted from wiki.unity3d.com
+/// Adapted from wiki.unity3d.com by Arthur Wollocko
 /// </summary>
 [AddComponentMenu("Camera-Control/Smooth Mouse Look")]
 public class SmoothMouseLook : MonoBehaviour

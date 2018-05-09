@@ -217,7 +217,7 @@ MonoBehaviour:
   hitDeadSound: {fileID: 8300000, guid: 6f9eac5eebca4f24b95f57a70d25bd9c, type: 3}
   protectionZoneOfInterest: {fileID: 0}
   attackdamage: 10
-  speed: 0.1
+  speed: 0.08
 --- !u!114 &114831840830043972
 MonoBehaviour:
   m_ObjectHideFlags: 1
