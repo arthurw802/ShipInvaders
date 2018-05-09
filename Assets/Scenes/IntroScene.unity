@@ -269,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce9015bcf544664fbbbc24b77330448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textToDisplay: Your goal is to defend the village from attack! Spaceships and blocks
-    will rain from the sky, attacking the houses and the water supply.
+  textToDisplay: Your goal is to defend the village from attack! Spaceships will rain
+    from the sky, attacking the houses and the water supply.
 --- !u!1001 &63341712
 Prefab:
   m_ObjectHideFlags: 0
@@ -600,6 +600,16 @@ Prefab:
         type: 2}
       propertyPath: ShapeModule.radiusThickness
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198343313318854570, guid: f117274e76b035a4ca84d167248fbfa1,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198343313318854570, guid: f117274e76b035a4ca84d167248fbfa1,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198343313318854570, guid: f117274e76b035a4ca84d167248fbfa1,
         type: 2}
