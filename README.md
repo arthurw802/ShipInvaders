@@ -29,7 +29,7 @@ It was created with extreme extensibility and flexibility in mind, allowing new 
 
 *FiredObjects* These are located within the "CannonBalls" folder, and provides a script for objects that can be fired from a cannon. This script provides the damage of this projectile.
 
-*Powerups* Powerups will spawn on the ground dynamically, being created by the PowerupSpawner. There are 3 included powerups in the game. Each will change the projectile being fired for a number of seconds, adjust the physics of the firing, the time between refires, and the sounds. These are all externalized so they can be adjusted easily
+*Powerups* Powerups will spawn on the ground dynamically, being created by the PowerupSpawner. There are 3 included powerups in the game (Mushroom, Turtle, and Bomb). Each will change the projectile being fired for a number of seconds, adjust the physics of the firing, the time between refires, and the sounds. These are all externalized so they can be adjusted easily
 
 *Score and Health Tracking* The player's health and score are tracked throughout the game. The player receives additional health every 50 points they score, and loses health based off the different obstacle's attack damages. The screen flashes green or red in these cases respectively. Top-3 high scores are  tracked using PlayerPrefs.
 
