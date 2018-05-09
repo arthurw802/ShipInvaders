@@ -23,6 +23,8 @@ for transitioning between locations, with dynamic text adjustment. Check it out.
 This section will quickly outline some of the features of the game. 
 It was created with extreme extensibility and flexibility in mind, allowing new enemies, new protection zones, and new projectiles to be easily created within seconds.
 
+*Protection Zones* These are cylinder objects with a ProtectionZone.cs script attached to them (and a trigger collider), which indicates that they are zones that will cause damage to the player when hit, and zones which enemies should progress towards. They can be placed anywhere (currently 3 placed in the world in the two houses, and the well)
+
 *Obstacles* are enemies within the game, that will dynamically spawn in the air and select a protection zone among any that are in the game (allowing flexibility in placement) and move towards that zone to attack it. Many of the parameters that dictate an obstacle's behavior have been externalized to the Unity editor, allowing you to change behavior quickly. This includes health bounds, point values, attack damage, sounds, and speed.
 
 *FiredObjects* These are located within the "CannonBalls" folder, and provides a script for objects that can be fired from a cannon. This script provides the damage of this projectile.
